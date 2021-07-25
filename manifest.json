@@ -1,0 +1,41 @@
+{
+	"manifest_version": 2,
+	"name": "SithLord",
+	"version": "0.1",
+
+	"description": "Execute order 66.",
+
+	"content_scripts": [
+		{
+			"matches": ["https://aftlite-na.amazon.com/labor_tracking/find_people"],
+			"js": ["findPeople.js"],
+			"css": ["blink.css"]
+		},
+		{
+			"matches": ["https://aftlite-na.amazon.com/labor_tracking/uph_drilldown"],
+			"js": ["checkRate.js"],
+			"css": ["blink.css"]
+		},
+		{
+			"matches": [
+				"https://como-operations-dashboard-iad.iad.proxy.amazon.com/store/f170be3c-eda4-43dd-b6bd-2325b4d3c719/jobdetails?jobId=*"
+			],
+			"js": ["route.js"]
+		},
+		{
+			"matches": [
+				"https://como-operations-dashboard-iad.iad.proxy.amazon.com/store/f170be3c-eda4-43dd-b6bd-2325b4d3c719/*"
+			],
+			"js": ["dash.js"],
+			"css": ["blink.css"]
+		}
+	],
+
+	"permissions": ["<all_urls>", "storage"],
+
+	"browser_specific_settings": {
+		"gecko": {
+			"update_url": "https://github.com/jeysonartiles/SithLord/blob/main/updates.json"
+		}
+	}
+}
