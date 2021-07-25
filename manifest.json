@@ -8,25 +8,25 @@
 	"content_scripts": [
 		{
 			"matches": ["https://aftlite-na.amazon.com/labor_tracking/find_people"],
-			"js": ["findPeople.js"],
+			"js": ["./aftlite/findPeople.js"],
 			"css": ["blink.css"]
 		},
 		{
 			"matches": ["https://aftlite-na.amazon.com/labor_tracking/uph_drilldown"],
-			"js": ["checkRate.js"],
+			"js": ["./aftlite/checkRate.js"],
 			"css": ["blink.css"]
 		},
 		{
 			"matches": [
 				"https://como-operations-dashboard-iad.iad.proxy.amazon.com/store/f170be3c-eda4-43dd-b6bd-2325b4d3c719/jobdetails?jobId=*"
 			],
-			"js": ["route.js"]
+			"js": ["./como/route.js"]
 		},
 		{
 			"matches": [
 				"https://como-operations-dashboard-iad.iad.proxy.amazon.com/store/f170be3c-eda4-43dd-b6bd-2325b4d3c719/*"
 			],
-			"js": ["dash.js"],
+			"js": ["./como/dash.js"],
 			"css": ["blink.css"]
 		}
 	],
